@@ -1,0 +1,32 @@
+@import "../../../../styles/variables.scss";
+
+span {
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: $p-size;
+  width: 80%;
+  max-width: 600px;
+  height: 40px;
+  padding: 6px;
+  margin: 10px auto;
+  border-radius: 8px;
+
+  &.success {
+    background-color: rgb(79, 255, 79);
+    color: green;
+  }
+
+  &.error {
+    background-color: rgb(255, 88, 88);
+    color: white;
+  }
+}

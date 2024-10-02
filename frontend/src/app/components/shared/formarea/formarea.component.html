@@ -6,7 +6,9 @@
     <input
       [type]="type()"
       [placeholder]="placeholder()"
+      [value]="value"
       [name]="name()"
+      (input)="onInput($event)"
       class="form_area_input"
       required
     />
