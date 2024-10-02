@@ -1,17 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component, input } from '@angular/core';
-import { FormControl } from '@angular/forms';
 
-enum Type {
-  text = 'text',
-  email = 'email',
-  password = 'password',
-  number = 'number',
-}
+type Type = 'text' | 'password' | 'email' | 'number';
 
 @Component({
   selector: 'app-form-area',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './formarea.component.html',
   styleUrl: './formarea.component.scss',
 })
@@ -20,4 +15,5 @@ export class FormareaComponent {
   type = input.required<Type>();
   name = input.required<string>();
   placeholder = input.required<string>();
+  svg = input.required<string>();
 }

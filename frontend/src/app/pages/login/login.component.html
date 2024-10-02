@@ -3,6 +3,22 @@
   <div class="login_container">
     <img src="/imgs/ifes-logo-retrato.png" alt="logo-ifes" class="logo" />
     <h1 class="login_title">Realize seu login:</h1>
-    <form></form>
+    <form>
+      <app-form-area
+        label="Email:"
+        type="email"
+        name="email"
+        placeholder="Seu email"
+        svg="/svgs/email.svg"
+      />
+      <app-form-area
+        label="Senha:"
+        type="password"
+        name="password"
+        placeholder="Sua senha"
+        svg="/svgs/senha.svg"
+      />
+      <app-button color="primary" type="submit">Enviar</app-button>
+    </form>
   </div>
 </div>

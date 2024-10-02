@@ -1,0 +1,51 @@
+@import "../../../../styles/variables.scss";
+
+.form_area {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+  height: 100px;
+  margin-block: 20px;
+  padding: 10px;
+
+  .form_area_label {
+    font-size: $big-size;
+    cursor: pointer;
+  }
+
+  .input_area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    .form_area_input {
+      font-size: $p-size;
+      width: 90%;
+      height: 36px;
+      padding: 10px;
+      border: 1px solid rgba(0, 0, 0, 0.727);
+      border-radius: 18px 0 0 18px;
+    }
+
+    .icon_container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $primary-color;
+      width: 10%;
+      height: 36px;
+      padding: 10px;
+      border: 1px solid black;
+      border-left: none;
+      border-radius: 0 16px 16px 0;
+
+      .icon {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+}

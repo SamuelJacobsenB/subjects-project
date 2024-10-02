@@ -1,11 +1,17 @@
 <div class="form_area">
-  <label [htmlFor]="name()">
+  <label [htmlFor]="name()" class="form_area_label">
     {{ label() }}
   </label>
-  <input
-    [type]="type()"
-    [placeholder]="placeholder()"
-    [name]="name()"
-    required
-  />
+  <div class="input_area">
+    <input
+      [type]="type()"
+      [placeholder]="placeholder()"
+      [name]="name()"
+      class="form_area_input"
+      required
+    />
+    <div class="icon_container">
+      <img [src]="svg()" alt="icon" class="icon" />
+    </div>
+  </div>
 </div>
