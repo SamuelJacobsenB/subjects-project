@@ -8,6 +8,8 @@ import {
 } from '@angular/forms';
 import { ButtonComponent } from '../../components/shared/button/button.component';
 import { LoginService } from './login.service';
+import { MessageService } from '../../components/shared/message/message.service';
+import { helpers } from '../../../helpers/helpers';
 
 @Component({
   selector: 'app-login',
@@ -18,6 +20,7 @@ import { LoginService } from './login.service';
 })
 export class LoginComponent {
   loginService = inject(LoginService);
+  messageService = inject(MessageService);
 
   form = new FormGroup({
     email: new FormControl('', [Validators.email, Validators.required]),
@@ -36,7 +39,7 @@ export class LoginComponent {
     if (email && password) {
       await this.loginService.login(email, password);
     } else {
-      console.log('Please enter');
+      this.messageService.showMessage(helpers.messages.UNFIELD_FIELDS, 'error');
     }
   }
 }
