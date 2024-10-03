@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit, HostListener } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {
@@ -16,11 +16,30 @@ import { NavService } from './nav.service';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.scss'],
 })
-export class NavComponent {
+export class NavComponent implements OnInit {
   navService = inject(NavService);
+
+  screenWidth!: number;
 
   onClick(): void {
     this.navService.toogleMenu();
+  }
+
+  ngOnInit() {
+    this.screenWidth = window.innerWidth;
+
+    if (this.screenWidth >= 900) {
+      this.navService.setVisible();
+    }
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onWindowResize() {
+    this.screenWidth = window.innerWidth;
+
+    if (this.screenWidth >= 900) {
+      this.navService.setVisible();
+    }
   }
 
   faBars = faBars;

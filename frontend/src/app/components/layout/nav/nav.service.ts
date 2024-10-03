@@ -9,4 +9,8 @@ export class NavService {
   toogleMenu(): void {
     this.display = !this.display;
   }
+
+  setVisible(): void {
+    this.display = true;
+  }
 }
