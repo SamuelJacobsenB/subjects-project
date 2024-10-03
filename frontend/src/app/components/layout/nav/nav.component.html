@@ -1,8 +1,20 @@
 <nav class="nav_bar">
-  <div class="menu_burguer"></div>
-  <div class="nav_links">
-    <a routerLink="/home" routerLinkActive="active">Principal</a>
-    <a routerLink="/warnings" routerLinkActive="active">Avisos</a>
-    <a routerLink="/about" routerLinkActive="active">Sobre</a>
+  <div class="menu_burguer" (click)="onClick()">
+    <fa-icon [icon]="faBars" size="2x" class="menu"></fa-icon>
+  </div>
+  <div
+    class="nav_links"
+    [style.display]="navService.display == true ? 'flex' : 'none'"
+  >
+    <a routerLink="/home" routerLinkActive="active">
+      <fa-icon [icon]="faHome"></fa-icon>
+      Principal</a
+    >
+    <a routerLink="/warnings" routerLinkActive="active">
+      <fa-icon [icon]="faWarning"></fa-icon> Avisos</a
+    >
+    <a routerLink="/about" routerLinkActive="active">
+      <fa-icon [icon]="faEnvelope"></fa-icon> Sobre</a
+    >
   </div>
 </nav>

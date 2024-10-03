@@ -27,7 +27,6 @@ export class FormareaComponent implements ControlValueAccessor {
   type = input.required<Type>();
   name = input.required<string>();
   placeholder = input.required<string>();
-  svg = input.required<string>();
 
   value: string = '';
   onChage: any = () => {};

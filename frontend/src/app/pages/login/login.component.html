@@ -1,10 +1,12 @@
 <div class="login">
   <div class="background_container">
-    <img
-      src="/imgs/ifes-logo-paisagem.png"
-      alt="Logo-IFES"
-      class="ifes_background"
-    />
+    <div class="image_container">
+      <img
+        src="/imgs/ifes-logo-paisagem.png"
+        alt="Logo-IFES"
+        class="ifes_background"
+      />
+    </div>
   </div>
   <div class="login_container">
     <img src="/imgs/ifes-logo-retrato.png" alt="logo-ifes" class="logo" />
@@ -16,16 +18,18 @@
         type="email"
         name="email"
         placeholder="Seu email"
-        svg="/svgs/email.svg"
-      />
+      >
+        <fa-icon [icon]="faEnvelope" class="icon" size="xl"></fa-icon>
+      </app-form-area>
       <app-form-area
         formControlName="password"
         label="Senha:"
         type="password"
         name="password"
         placeholder="Sua senha"
-        svg="/svgs/senha.svg"
-      />
+      >
+        <fa-icon [icon]="faKey" class="icon" size="xl"></fa-icon
+      ></app-form-area>
       <app-button color="primary" type="submit">Enviar</app-button>
     </form>
   </div>

@@ -1,5 +1,9 @@
 @import "../../../styles/variables.scss";
 
+.icon {
+  color: $light-gray-color;
+}
+
 .login {
   width: 100%;
   height: 100%;
@@ -47,9 +51,14 @@
       width: calc(100% - 600px);
       float: left;
 
-      .ifes_background {
-        width: 340px;
-        height: 120px;
+      .image_container {
+        background-color: white;
+        box-shadow: 0 0 30px 10px white;
+
+        .ifes_background {
+          width: 340px;
+          height: 120px;
+        }
       }
     }
 
