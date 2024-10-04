@@ -19,7 +19,7 @@ export class SubjectComponent implements OnInit {
   subject: string = this.router.url.split('/')[1].toLocaleUpperCase();
 
   onClick(id: string): void {
-    this.router.navigateByUrl(`/${this.subject}/${id}`);
+    this.router.navigateByUrl(`/${this.subject.toLowerCase()}/${id}`);
   }
 
   async ngOnInit(): Promise<void> {

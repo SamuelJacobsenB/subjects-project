@@ -1,3 +1,11 @@
-<p>
-  topic works!
-</p>
+<app-header></app-header>
+<app-nav></app-nav>
+<div class="default_page topic_page">
+  @for (subtopic of this.topicService.subtopics(); track subtopic.id) {
+  <div (click)="onClick(subtopic.id)">
+    <app-card [title]="subtopic.title" [id]="subtopic.id"></app-card>
+  </div>
+  } @empty {
+  <h1 class="empty">Nenhum subpico foi cadastrado para este tópico.</h1>
+  }
+</div>
