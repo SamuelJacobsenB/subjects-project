@@ -26,19 +26,23 @@ export class NavComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.screenWidth = window.innerWidth;
+    if (typeof window !== 'undefined') {
+      this.screenWidth = window.innerWidth;
 
-    if (this.screenWidth >= 900) {
-      this.navService.setVisible();
+      if (this.screenWidth >= 900) {
+        this.navService.setVisible();
+      }
     }
   }
 
   @HostListener('window:resize', ['$event'])
   onWindowResize() {
-    this.screenWidth = window.innerWidth;
+    if (typeof window !== 'undefined') {
+      this.screenWidth = window.innerWidth;
 
-    if (this.screenWidth >= 900) {
-      this.navService.setVisible();
+      if (this.screenWidth >= 900) {
+        this.navService.setVisible();
+      }
     }
   }
 

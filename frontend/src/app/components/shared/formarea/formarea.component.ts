@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, forwardRef, input } from '@angular/core';
+import { Component, forwardRef, Input, input } from '@angular/core';
 import {
   ControlValueAccessor,
   NG_VALUE_ACCESSOR,
@@ -23,10 +23,10 @@ type Type = 'text' | 'password' | 'email' | 'number';
   styleUrl: './formarea.component.scss',
 })
 export class FormareaComponent implements ControlValueAccessor {
-  label = input.required<string>();
-  type = input.required<Type>();
-  name = input.required<string>();
-  placeholder = input.required<string>();
+  @Input({ required: true }) label!: string;
+  @Input({ required: true }) type!: Type;
+  @Input({ required: true }) name!: string;
+  @Input({ required: true }) placeholder!: string;
 
   value: string = '';
   onChage: any = () => {};

@@ -1,13 +1,13 @@
 <div class="form_area">
-  <label [htmlFor]="name()" class="form_area_label">
-    {{ label() }}
+  <label [htmlFor]="name" class="form_area_label">
+    {{ label }}
   </label>
   <div class="input_area">
     <input
-      [type]="type()"
-      [placeholder]="placeholder()"
+      [type]="type"
+      [placeholder]="placeholder"
       [value]="value"
-      [name]="name()"
+      [name]="name"
       (input)="onInput($event)"
       class="form_area_input"
       required
