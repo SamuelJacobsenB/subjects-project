@@ -17,7 +17,9 @@ export class TopicComponent implements OnInit {
   router = inject(Router);
   topicService = inject(TopicService);
 
-  topic: string = this.router.url.split('/')[2].toLocaleUpperCase();
+  urlParts: string[] = this.router.url.split('/');
+  topic: string = this.urlParts[2].toUpperCase();
+  url: string = `/${this.urlParts[1]}`;
 
   onClick(id: string): void {
     this.router.navigateByUrl(`${this.router.url}/${id}`);

@@ -1,0 +1,50 @@
+@import "../../../styles/variables.scss";
+
+.subtopic_page {
+  flex-direction: column;
+
+  h1.title {
+    text-align: center;
+    font-size: $title-size;
+    margin: 10px;
+    text-decoration: underline;
+  }
+
+  div.content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-self: center;
+    gap: 10px;
+    text-align: justify;
+    width: calc(100% - 20px);
+    max-width: 600px;
+    padding: 10px;
+
+    h1,
+    h2 {
+      text-align: left;
+      font-size: $subtitle-size;
+    }
+
+    p {
+      text-indent: 20px;
+      font-size: $p-size;
+
+      a {
+        color: $light-blue-color;
+        text-decoration: underline;
+      }
+    }
+
+    b {
+      color: $secondary-color;
+      text-decoration: underline;
+    }
+
+    a {
+      color: $light-blue-color;
+      text-decoration: underline;
+    }
+  }
+}

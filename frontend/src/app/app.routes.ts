@@ -4,6 +4,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { SubjectComponent } from './pages/subject/subject.component';
 import { TopicComponent } from './pages/topic/topic.component';
 import { UserAuthGuard } from './guards/user-auth.guard';
+import { SubtopicComponent } from './pages/subtopic/subtopic.component';
 
 export const routes: Routes = [
   {
@@ -23,6 +24,11 @@ export const routes: Routes = [
   {
     path: ':subject/:id',
     component: TopicComponent,
+    canActivate: [UserAuthGuard],
+  },
+  {
+    path: ':subject/:id/:id',
+    component: SubtopicComponent,
     canActivate: [UserAuthGuard],
   },
 ];

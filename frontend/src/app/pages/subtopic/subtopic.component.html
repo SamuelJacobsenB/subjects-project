@@ -1,0 +1,11 @@
+<app-header></app-header>
+<app-nav></app-nav>
+<div class="default_page subtopic_page">
+  <app-back [url]="url" />
+  @if (this.subtopicService.subtopic().id !== '') {
+  <h1 class="title">{{ this.subtopicService.subtopic().title }}</h1>
+  <div class="content">
+    {{ this.subtopicService.subtopic().content }}
+  </div>
+  }
+</div>
