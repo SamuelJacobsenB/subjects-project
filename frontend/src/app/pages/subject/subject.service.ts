@@ -31,7 +31,7 @@ export class SubjectService {
         await api
           .get(`/topic/subject/${subject}`, {
             headers: {
-              Authorization: 'Bearer ' + access_token,
+              Authorization: access_token,
             },
           })
           .then((res: any) => {

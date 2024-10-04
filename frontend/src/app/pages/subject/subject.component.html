@@ -1,3 +1,11 @@
 <app-header></app-header>
 <app-nav></app-nav>
-<div class="default_page subject_page"></div>
+<div class="default_page subject_page">
+  @for (topic of this.subjectService.topics(); track topic.id) {
+  <div (click)="onClick(topic.id)">
+    <app-card [title]="topic.title" [id]="topic.id"></app-card>
+  </div>
+  } @empty {
+  <h1 class="empty">Nenhum tópico foi cadastrado para esta matéria.</h1>
+  }
+</div>

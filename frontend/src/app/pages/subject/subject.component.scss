@@ -1,0 +1,11 @@
+@import "../../../styles/variables.scss";
+
+.subject_page {
+  flex-direction: column;
+
+  h1.empty {
+    text-align: center;
+    font-size: $subtitle-size;
+    padding: 20px;
+  }
+}

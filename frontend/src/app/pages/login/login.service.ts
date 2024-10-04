@@ -17,7 +17,10 @@ export class LoginService {
       .post('/auth/login', { email: email, password: password })
       .then((res: any) => {
         if (res.data.access_token) {
-          localStorage.setItem('access_token', res.data.access_token);
+          localStorage.setItem(
+            'access_token',
+            'Bearer ' + res.data.access_token
+          );
           this.router.navigateByUrl('/');
         } else {
           throw new UnauthorizedError(res.data.message);

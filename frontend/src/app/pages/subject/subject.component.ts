@@ -1,13 +1,14 @@
 import { Component, inject, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { HeaderComponent } from '../../components/layout/header/header.component';
 import { NavComponent } from '../../components/layout/nav/nav.component';
 import { SubjectService } from './subject.service';
-import { Router } from '@angular/router';
+import { CardComponent } from '../../components/shared/card/card.component';
 
 @Component({
   selector: 'app-subject',
   standalone: true,
-  imports: [HeaderComponent, NavComponent],
+  imports: [HeaderComponent, NavComponent, CardComponent],
   templateUrl: './subject.component.html',
   styleUrls: ['./subject.component.scss'],
 })
@@ -16,6 +17,10 @@ export class SubjectComponent implements OnInit {
   subjectService = inject(SubjectService);
 
   subject: string = this.router.url.split('/')[1].toLocaleUpperCase();
+
+  onClick(id: string): void {
+    this.router.navigateByUrl(`/${this.subject}/${id}`);
+  }
 
   async ngOnInit(): Promise<void> {
     await this.subjectService.getTopics(this.subject);
