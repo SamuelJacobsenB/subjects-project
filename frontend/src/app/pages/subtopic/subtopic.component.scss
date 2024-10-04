@@ -15,7 +15,7 @@
     align-items: center;
     flex-direction: column;
     align-self: center;
-    gap: 10px;
+    gap: 30px;
     text-align: justify;
     width: calc(100% - 20px);
     max-width: 600px;
@@ -25,6 +25,7 @@
     h2 {
       text-align: left;
       font-size: $subtitle-size;
+      width: 100%;
     }
 
     p {

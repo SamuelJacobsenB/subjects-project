@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { SubtopicService } from './subtopic.service';
 import { HeaderComponent } from './../../components/layout/header/header.component';
@@ -11,6 +11,7 @@ import { BackComponent } from '../../components/shared/back/back.component';
   imports: [HeaderComponent, NavComponent, BackComponent],
   templateUrl: './subtopic.component.html',
   styleUrls: ['./subtopic.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class SubtopicComponent implements OnInit {
   router = inject(Router);
