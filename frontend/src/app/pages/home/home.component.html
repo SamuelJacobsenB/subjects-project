@@ -2,6 +2,8 @@
 <app-nav></app-nav>
 <div class="default_page home">
   @for (subject of subjects; track $index) {
-  <app-card [title]="subject" (onclick)="onClick(subject)"></app-card>
+  <div (click)="onClick(subject)">
+    <app-card [title]="subject" (onclick)="onClick(subject)"></app-card>
+  </div>
   }
 </div>
