@@ -4,11 +4,12 @@ import { HeaderComponent } from '../../components/layout/header/header.component
 import { NavComponent } from '../../components/layout/nav/nav.component';
 import { CardComponent } from '../../components/shared/card/card.component';
 import { TopicService } from './topic.service';
+import { BackComponent } from '../../components/shared/back/back.component';
 
 @Component({
   selector: 'app-topic',
   standalone: true,
-  imports: [HeaderComponent, NavComponent, CardComponent],
+  imports: [HeaderComponent, NavComponent, CardComponent, BackComponent],
   templateUrl: './topic.component.html',
   styleUrls: ['./topic.component.scss'],
 })

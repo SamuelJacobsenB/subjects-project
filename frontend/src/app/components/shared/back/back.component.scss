@@ -1,0 +1,14 @@
+div.back {
+  width: calc(100% - 20px);
+  padding: 10px;
+
+  .left_arrow {
+    margin-left: 10px;
+    cursor: pointer;
+    transition: 0.4s;
+
+    &:hover {
+      margin-left: 0;
+    }
+  }
+}

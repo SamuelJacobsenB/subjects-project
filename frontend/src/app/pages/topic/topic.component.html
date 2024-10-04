@@ -1,6 +1,7 @@
 <app-header></app-header>
 <app-nav></app-nav>
 <div class="default_page topic_page">
+  <app-back />
   @for (subtopic of this.topicService.subtopics(); track subtopic.id) {
   <div (click)="onClick(subtopic.id)">
     <app-card [title]="subtopic.title" [id]="subtopic.id"></app-card>
