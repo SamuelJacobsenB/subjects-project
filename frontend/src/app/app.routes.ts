@@ -3,8 +3,10 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SubjectComponent } from './pages/subject/subject.component';
 import { TopicComponent } from './pages/topic/topic.component';
-import { UserAuthGuard } from './guards/user-auth.guard';
 import { SubtopicComponent } from './pages/subtopic/subtopic.component';
+import { AdminComponent } from './pages/admin/admin.component';
+import { UserAuthGuard } from './guards/user-auth.guard';
+import { AdminAuthGuard } from './guards/admin-auth.guard';
 
 export const routes: Routes = [
   {
@@ -17,18 +19,23 @@ export const routes: Routes = [
     component: LoginComponent,
   },
   {
-    path: ':subject',
+    path: 'subject/:subject',
     component: SubjectComponent,
     canActivate: [UserAuthGuard],
   },
   {
-    path: ':subject/:id',
+    path: 'subject/:subject/:id',
     component: TopicComponent,
     canActivate: [UserAuthGuard],
   },
   {
-    path: ':subject/:id/:id',
+    path: 'subject/:subject/:id/:id',
     component: SubtopicComponent,
     canActivate: [UserAuthGuard],
+  },
+  {
+    path: 'admin',
+    component: AdminComponent,
+    canActivate: [AdminAuthGuard],
   },
 ];

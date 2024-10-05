@@ -1,0 +1,9 @@
+<app-header></app-header>
+<app-nav></app-nav>
+<div class="default_page admin">
+  @for (subject of subjects; track $index) {
+  <div (click)="onClick(subject)">
+    <app-card [title]="subject" (onclick)="onClick(subject)"></app-card>
+  </div>
+  }
+</div>

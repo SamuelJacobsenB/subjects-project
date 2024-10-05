@@ -18,8 +18,8 @@ export class SubtopicComponent implements OnInit {
   subtopicService = inject(SubtopicService);
 
   urlParts: string[] = this.router.url.split('/');
-  subtopic: string = this.urlParts[3];
-  url: string = `/${this.urlParts[1]}/${this.urlParts[2]}`;
+  subtopic: string = this.urlParts[4];
+  url: string = `/${this.urlParts[1]}/${this.urlParts[2]}/${this.urlParts[3]}`;
 
   async ngOnInit(): Promise<void> {
     this.subtopicService.getSubtopic(this.subtopic);

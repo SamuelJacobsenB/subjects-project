@@ -6,6 +6,7 @@ import {
   faHome,
   faWarning,
   faEnvelope,
+  faUser,
 } from '@fortawesome/free-solid-svg-icons';
 import { NavService } from './nav.service';
 
@@ -25,7 +26,9 @@ export class NavComponent implements OnInit {
     this.navService.toogleMenu();
   }
 
-  ngOnInit() {
+  async ngOnInit() {
+    await this.navService.verifyAdmin();
+
     if (typeof window !== 'undefined') {
       this.screenWidth = window.innerWidth;
 
@@ -50,4 +53,5 @@ export class NavComponent implements OnInit {
   faHome = faHome;
   faWarning = faWarning;
   faEnvelope = faEnvelope;
+  faUser = faUser;
 }

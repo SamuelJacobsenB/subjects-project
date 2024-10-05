@@ -16,10 +16,10 @@ export class SubjectComponent implements OnInit {
   router = inject(Router);
   subjectService = inject(SubjectService);
 
-  subject: string = this.router.url.split('/')[1].toLocaleUpperCase();
+  subject: string = this.router.url.split('/')[2].toLocaleUpperCase();
 
   onClick(id: string): void {
-    this.router.navigateByUrl(`/${this.subject.toLowerCase()}/${id}`);
+    this.router.navigateByUrl(`/subject/${this.subject.toLowerCase()}/${id}`);
   }
 
   async ngOnInit(): Promise<void> {

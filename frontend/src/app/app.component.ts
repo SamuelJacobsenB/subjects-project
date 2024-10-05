@@ -7,6 +7,5 @@ import { MessageComponent } from './components/shared/message/message.component'
   standalone: true,
   imports: [RouterOutlet, MessageComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
 })
 export class AppComponent {}

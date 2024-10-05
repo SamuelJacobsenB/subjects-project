@@ -16,5 +16,12 @@
     <a routerLink="/about" routerLinkActive="active">
       <fa-icon [icon]="faEnvelope"></fa-icon> Sobre</a
     >
+    <a
+      routerLink="/admin"
+      routerLinkActive="active"
+      [style.display]="this.navService.isAdmin ? 'block' : 'none'"
+    >
+      <fa-icon [icon]="faUser"></fa-icon> Administrador</a
+    >
   </div>
 </nav>

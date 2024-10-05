@@ -1,26 +1,26 @@
 import { Component, inject } from '@angular/core';
+import { Router } from 'express';
+import { subjects } from '../../../constants/subjects.constant';
+import { AdminService } from './admin.service';
 import { HeaderComponent } from '../../components/layout/header/header.component';
 import { NavComponent } from '../../components/layout/nav/nav.component';
-import { subjects } from '../../../constants/subjects.constant';
 import { CardComponent } from '../../components/shared/card/card.component';
-import { HomeService } from './home.service';
-import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-admin',
   standalone: true,
   imports: [HeaderComponent, NavComponent, CardComponent],
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss',
+  templateUrl: './admin.component.html',
+  styleUrls: ['./admin.component.scss'],
 })
-export class HomeComponent {
+export class AdminComponent {
   router = inject(Router);
-  homeService = inject(HomeService);
+  adminService = inject(AdminService);
 
   subjects = subjects;
 
   onClick(title: string): void {
-    const subject: string = this.homeService.translateSubject(title);
+    const subject: string = this.adminService.translateSubject(title);
     this.router.navigateByUrl(`/subject/${subject.toLowerCase()}`);
   }
 }
