@@ -1,3 +1,14 @@
-<p>
-  users works!
-</p>
+<app-header></app-header>
+<app-admin-nav></app-admin-nav>
+<div class="default_page users_admin_page">
+  <a routerLink="/admin/modify/users/create">
+    <app-button color="primary" type="button"
+      >Cadastrar novo usuário</app-button
+    >
+  </a>
+  @for (user of this.usersService.users(); track user.id) {
+  <app-card [title]="user.name" [id]="user.id"></app-card>
+  } @empty {
+  <h1>Nenhum usuário cadastrado</h1>
+  }
+</div>

@@ -7,6 +7,7 @@ import { SubtopicComponent } from './pages/subtopic/subtopic.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { UserAuthGuard } from './guards/user-auth.guard';
 import { AdminAuthGuard } from './guards/admin-auth.guard';
+import { UsersComponent } from './pages/admin/modify/users/users.component';
 
 export const routes: Routes = [
   {
@@ -36,6 +37,11 @@ export const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent,
+    canActivate: [AdminAuthGuard],
+  },
+  {
+    path: 'admin/modify/users',
+    component: UsersComponent,
     canActivate: [AdminAuthGuard],
   },
 ];
