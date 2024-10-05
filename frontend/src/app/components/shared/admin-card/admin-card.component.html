@@ -1,0 +1,8 @@
+<div class="admin_card">
+  <h1>{{ title }}</h1>
+  @if(id){
+  <input type="hidden" [value]="id" />
+  }
+  <a href=""><button class="btn_card edit"></button></a>
+  <button class="btn_card delete"></button>
+</div>
