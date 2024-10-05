@@ -1,16 +1,20 @@
-<nav class="nav_bar">
+<nav class="admin_nav_bar">
   <div class="menu_burguer" (click)="onClick()">
     <fa-icon [icon]="faBars" size="2x" class="menu"></fa-icon>
   </div>
   <div
-    class="nav_links"
+    class="admin_nav_links"
     [style.display]="adminNavService.display == true ? 'flex' : 'none'"
   >
     <a routerLink="/" routerLinkActive="active">
       <fa-icon [icon]="faHome"></fa-icon>
       Principal</a
     >
-    <a routerLink="/warnings" routerLinkActive="active">
+    <a routerLink="/" routerLinkActive="active">
+      <fa-icon [icon]="faLock"></fa-icon>
+      Adminstrador</a
+    >
+    <a routerLink="/admin/warnings" routerLinkActive="active">
       <fa-icon [icon]="faWarning"></fa-icon> Modificar Avisos</a
     >
     <a routerLink="/admin" routerLinkActive="active">

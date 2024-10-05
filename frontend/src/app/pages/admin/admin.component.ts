@@ -3,13 +3,13 @@ import { Router } from '@angular/router';
 import { subjects } from '../../../constants/subjects.constant';
 import { AdminService } from './admin.service';
 import { HeaderComponent } from '../../components/layout/header/header.component';
-import { NavComponent } from '../../components/layout/nav/nav.component';
+import { AdminNavComponent } from '../../components/layout/admin-nav/admin-nav.component';
 import { CardComponent } from '../../components/shared/card/card.component';
 
 @Component({
   selector: 'app-admin',
   standalone: true,
-  imports: [HeaderComponent, NavComponent, CardComponent],
+  imports: [HeaderComponent, AdminNavComponent, CardComponent],
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.scss'],
 })

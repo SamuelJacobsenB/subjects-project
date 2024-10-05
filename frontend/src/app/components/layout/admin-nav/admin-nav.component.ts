@@ -7,6 +7,7 @@ import {
   faWarning,
   faEnvelope,
   faUser,
+  faLock,
 } from '@fortawesome/free-solid-svg-icons';
 import { AdminNavService } from './admin-nav.service';
 
@@ -52,4 +53,5 @@ export class AdminNavComponent implements OnInit {
   faWarning = faWarning;
   faEnvelope = faEnvelope;
   faUser = faUser;
+  faLock = faLock;
 }

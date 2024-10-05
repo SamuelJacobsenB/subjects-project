@@ -1,0 +1,71 @@
+@import "../../../../styles/variables.scss";
+
+.admin_nav_bar {
+  position: fixed;
+  top: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: $primary-color;
+  width: 100%;
+  min-height: 60px;
+
+  .menu_burguer {
+    padding: 10px;
+    cursor: pointer;
+
+    .menu {
+      color: $light-gray-color;
+      transition: 0.4s;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  .admin_nav_links {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-height: 200px;
+    padding: 10px;
+
+    a {
+      text-align: center;
+      font-size: $p-size;
+      color: $light-gray-color;
+      width: 90%;
+      padding: 10px;
+      border-radius: 8px;
+      transition: 0.4s;
+      text-decoration: none;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $primary-dark-color;
+        color: white;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .admin_nav_bar {
+    .menu_burguer {
+      display: none;
+    }
+
+    .admin_nav_links {
+      display: block;
+      align-items: center;
+      justify-content: space-around;
+      flex-direction: row;
+      height: min-content;
+    }
+  }
+}
