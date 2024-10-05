@@ -1,0 +1,20 @@
+<div
+  class="corfirm_card_area"
+  [style.display]="this.confirmCardService.display ? 'flex' : 'none'"
+>
+  <div class="confirm_card">
+    <h2>Ação será realizada</h2>
+    <p>{{ this.confirmCardService.message }}</p>
+    <div class="confirm_card_btns">
+      <app-button
+        color="secondary"
+        type="button"
+        (click)="cancelOrConfirm(false)"
+        >Cancelar</app-button
+      >
+      <app-button color="primary" type="button" (click)="cancelOrConfirm(true)"
+        >Confirmar</app-button
+      >
+    </div>
+  </div>
+</div>

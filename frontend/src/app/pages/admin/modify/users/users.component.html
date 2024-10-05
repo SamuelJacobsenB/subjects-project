@@ -7,7 +7,11 @@
     >
   </a>
   @for (user of this.usersService.users(); track user.id) {
-  <app-card [title]="user.name" [id]="user.id"></app-card>
+  <app-admin-card
+    [title]="user.name"
+    [id]="user.id"
+    [deleteFunction]="onDelete(user.id)"
+  ></app-admin-card>
   } @empty {
   <h1>Nenhum usuário cadastrado</h1>
   }

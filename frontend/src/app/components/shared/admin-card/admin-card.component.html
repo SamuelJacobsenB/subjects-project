@@ -3,6 +3,12 @@
   @if(id){
   <input type="hidden" [value]="id" />
   }
-  <a href=""><button class="btn_card edit"></button></a>
-  <button class="btn_card delete"></button>
+  <div class="btn_card_area">
+    <button class="edit" (click)="edit()">
+      <fa-icon [icon]="faPecil" size="xl"></fa-icon>
+    </button>
+    <button class="delete" (click)="executeDelete()">
+      <fa-icon [icon]="faTrash" size="xl"></fa-icon>
+    </button>
+  </div>
 </div>

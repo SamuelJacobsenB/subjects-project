@@ -4,7 +4,7 @@ import { UsersService } from './users.service';
 import { HeaderComponent } from '../../../../components/layout/header/header.component';
 import { AdminNavComponent } from '../../../../components/layout/admin-nav/admin-nav.component';
 import { ButtonComponent } from '../../../../components/shared/button/button.component';
-import { CardComponent } from '../../../../components/shared/card/card.component';
+import { AdminCardComponent } from '../../../../components/shared/admin-card/admin-card.component';
 
 @Component({
   selector: 'app-users',
@@ -15,7 +15,7 @@ import { CardComponent } from '../../../../components/shared/card/card.component
     HeaderComponent,
     AdminNavComponent,
     ButtonComponent,
-    CardComponent,
+    AdminCardComponent,
   ],
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.scss'],
@@ -25,5 +25,10 @@ export class UsersComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     await this.usersService.getUsers();
+  }
+
+  async onDelete(id: string): Promise<void> {
+    // await this.usersService.deleteUser(id);
+    console.log(id);
   }
 }
