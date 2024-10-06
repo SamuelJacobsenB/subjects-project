@@ -71,11 +71,6 @@ export class UsersService {
             if (res.message) {
               throw new BadRequestError(res.message);
             }
-
-            this.messageService.showMessage(
-              helpers.messages.SUCCESS_ACTION,
-              'success'
-            );
           })
           .catch((err: any) => {
             throw new UnauthorizedError(err.message);

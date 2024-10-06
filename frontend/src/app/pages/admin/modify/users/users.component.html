@@ -10,9 +10,9 @@
   <app-admin-card
     [title]="user.name"
     [id]="user.id"
-    [deleteFunction]="onDelete(user.id)"
+    [deleteFunction]="this.usersService.deleteUser"
   ></app-admin-card>
   } @empty {
-  <h1>Nenhum usuário cadastrado</h1>
+  <h1 class="empty">Nenhum usuário cadastrado</h1>
   }
 </div>

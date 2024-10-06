@@ -1,6 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { ConfirmCardService } from './confirm-card.service';
 import { ButtonComponent } from '../button/button.component';
+import { MessageService } from '../message/message.service';
+import { helpers } from '../../../../helpers/helpers';
 
 @Component({
   selector: 'app-confirm-card',
@@ -11,11 +13,22 @@ import { ButtonComponent } from '../button/button.component';
 })
 export class ConfirmCardComponent {
   confirmCardService = inject(ConfirmCardService);
+  messageService = inject(MessageService);
 
   async cancelOrConfirm(value: boolean): Promise<void> {
     if (value) {
-      await this.confirmCardService.outFunction();
-      this.confirmCardService.close();
+      await this.confirmCardService
+        .outFunction()
+        .then(() => {
+          this.confirmCardService.close();
+          this.messageService.showMessage(
+            helpers.messages.SUCCESS_ACTION,
+            'success'
+          );
+        })
+        .catch(() => {
+          this.confirmCardService.close();
+        });
     } else {
       this.confirmCardService.close();
     }

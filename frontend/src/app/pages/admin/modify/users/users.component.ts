@@ -26,9 +26,4 @@ export class UsersComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     await this.usersService.getUsers();
   }
-
-  async onDelete(id: string): Promise<void> {
-    // await this.usersService.deleteUser(id);
-    console.log(id);
-  }
 }

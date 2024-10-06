@@ -17,13 +17,13 @@ export class AdminCardComponent {
 
   @Input({ required: true }) title: string = '';
   @Input({ required: true }) id: string = '';
-  @Input({ required: true }) deleteFunction!: any;
+  @Input({ required: true }) deleteFunction?: (id: string) => void;
 
   async executeDelete(): Promise<void> {
     if (this.deleteFunction) {
       this.corfirmCardService.setVisible(
-        'Você deseja confirmar a exclusão deste usuário?',
-        this.deleteFunction
+        'Você deseja confirmar a exclusão deste elemento?',
+        async () => this.deleteFunction!(this.id)
       );
     }
   }

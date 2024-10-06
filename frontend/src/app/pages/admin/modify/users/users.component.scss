@@ -1,7 +1,14 @@
+@import "../../../../../styles/variables.scss";
+
 .users_admin_page {
   flex-direction: column;
 
   a {
     margin: 20px;
+  }
+
+  h1.empty {
+    font-size: $subtitle-size;
+    text-align: center;
   }
 }

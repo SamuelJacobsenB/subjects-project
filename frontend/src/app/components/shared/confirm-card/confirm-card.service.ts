@@ -6,9 +6,9 @@ import { Injectable } from '@angular/core';
 export class ConfirmCardService {
   display: boolean = false;
   message!: string;
-  outFunction: any;
+  outFunction!: () => Promise<void>;
 
-  setVisible(message: string, outFunction: any): void {
+  setVisible(message: string, outFunction: () => Promise<void>): void {
     this.display = !this.display;
 
     this.message = message;
@@ -19,6 +19,6 @@ export class ConfirmCardService {
     this.display = false;
 
     this.message = '';
-    this.outFunction = null;
+    this.outFunction = async () => {};
   }
 }
