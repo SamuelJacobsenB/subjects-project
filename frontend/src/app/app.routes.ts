@@ -8,6 +8,8 @@ import { AdminComponent } from './pages/admin/admin.component';
 import { UserAuthGuard } from './guards/user-auth.guard';
 import { AdminAuthGuard } from './guards/admin-auth.guard';
 import { UsersComponent } from './pages/admin/modify/users/users.component';
+import { UserComponent } from './pages/admin/create/user/user.component';
+import { UpdateUserComponent } from './pages/admin/update/user/user.component';
 
 export const routes: Routes = [
   {
@@ -42,6 +44,16 @@ export const routes: Routes = [
   {
     path: 'admin/modify/users',
     component: UsersComponent,
+    canActivate: [AdminAuthGuard],
+  },
+  {
+    path: 'admin/create/user',
+    component: UserComponent,
+    canActivate: [AdminAuthGuard],
+  },
+  {
+    path: 'admin/update/user/:id',
+    component: UpdateUserComponent,
     canActivate: [AdminAuthGuard],
   },
 ];

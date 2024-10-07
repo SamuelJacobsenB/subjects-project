@@ -1,3 +1,46 @@
-<p>
-  user works!
-</p>
+<div class="create_user">
+  <div class="background_container">
+    <div class="image_container">
+      <img
+        src="/imgs/ifes-logo-paisagem.png"
+        alt="Logo-IFES"
+        class="ifes_background"
+      />
+    </div>
+  </div>
+  <div class="create_user_container">
+    <app-back url="/admin/modify/users" class="back_to_users" />
+    <img src="/imgs/ifes-logo-retrato.png" alt="logo-ifes" class="logo" />
+    <h1 class="create_user_title">Cadastre um usuário:</h1>
+    <form [formGroup]="form" (ngSubmit)="onSubmit($event)" method="post">
+      <app-form-area
+        formControlName="name"
+        label="Nome:"
+        type="text"
+        name="name"
+        placeholder="Nome do usuário"
+      >
+        <fa-icon [icon]="faUser" class="icon" size="xl"></fa-icon
+      ></app-form-area>
+      <app-form-area
+        formControlName="email"
+        label="Email:"
+        type="email"
+        name="email"
+        placeholder="Email do usuário"
+      >
+        <fa-icon [icon]="faEnvelope" class="icon" size="xl"></fa-icon>
+      </app-form-area>
+      <app-form-area
+        formControlName="password"
+        label="Senha:"
+        type="password"
+        name="password"
+        placeholder="Senha do usuário"
+      >
+        <fa-icon [icon]="faKey" class="icon" size="xl"></fa-icon
+      ></app-form-area>
+      <app-button color="primary" type="submit">Cadastrar</app-button>
+    </form>
+  </div>
+</div>

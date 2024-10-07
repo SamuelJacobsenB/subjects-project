@@ -1,0 +1,77 @@
+@import "../../../../../styles/variables.scss";
+
+.icon {
+  color: $light-gray-color;
+}
+
+.create_user {
+  width: 100%;
+  height: 100%;
+
+  .background_container {
+    display: none;
+  }
+
+  .create_user_container {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+
+    .back_to_users {
+      width: 100%;
+    }
+
+    .logo {
+      width: 180px;
+      height: 160px;
+      margin-top: 40px;
+    }
+
+    .create_user_title {
+      font-size: $title-size;
+    }
+
+    form {
+      width: 80%;
+    }
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .create_user {
+    display: flex;
+    width: 100%;
+    height: 100%;
+
+    .background_container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $light-gray-color;
+      width: calc(100% - 600px);
+      float: left;
+
+      .image_container {
+        background-color: white;
+        box-shadow: 0 0 30px 10px white;
+
+        .ifes_background {
+          width: 340px;
+          height: 120px;
+        }
+      }
+    }
+
+    .create_user_container {
+      position: absolute;
+      right: 0;
+      width: 100%;
+      max-width: 600px;
+      box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.299);
+    }
+  }
+}
