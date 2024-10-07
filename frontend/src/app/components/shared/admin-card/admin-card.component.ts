@@ -17,6 +17,7 @@ export class AdminCardComponent {
 
   @Input({ required: true }) title: string = '';
   @Input({ required: true }) id: string = '';
+  @Input({ required: true }) editUrl: string = '';
   @Input({ required: true }) deleteFunction?: (id: string) => void;
 
   async executeDelete(): Promise<void> {
@@ -29,7 +30,7 @@ export class AdminCardComponent {
   }
 
   edit(): void {
-    this.router.navigateByUrl(`/admin/modify/users/${this.id}`);
+    this.router.navigateByUrl(`${this.editUrl}/${this.id}`);
   }
 
   faPecil = faPencil;
